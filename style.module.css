@@ -1,5 +1,8 @@
-body,
-.title {
+body {
+    background: #000000;
     color: #f5f5f5;
-    background-color: #000000;
+}
+
+.title {
+    color: #ff6347;
 }
