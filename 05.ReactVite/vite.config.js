@@ -1,13 +1,22 @@
-import { defineConfig } from 'vite';
+import {
+    defineConfig,
+    // loadEnv
+} from 'vite';
+import react from '@vitejs/plugin-react';
 
-export default defineConfig(({ command, mode, ssrBuild }) => {
-    console.log(command, mode, ssrBuild);
+// import process from 'process';
 
-    if (mode === 'production') {
-        return {
-            base: '/vite/',
-        };
+// https://vitejs.dev/config/
+export default defineConfig(
+    // ({ mode }) => {
+    // const env = loadEnv(mode, process.cwd(), 'VITE_');
+    // console.log(env);
+
+    // return
+    {
+        clearScreen: false,
+        envPrefix: 'TEST_',
+        plugins: [react()],
     }
-
-    return {};
-});
+    // }
+);

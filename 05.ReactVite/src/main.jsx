@@ -4,7 +4,7 @@ import App from './App.jsx';
 import './index.css';
 
 // console.log(`Server is running in '${import.meta.env.MODE}' mode`);
-// console.log(import.meta.env);
+console.log(import.meta.env);
 
 // if (import.meta.env.DEV) {
 //     console.log('This is Dev Server');
