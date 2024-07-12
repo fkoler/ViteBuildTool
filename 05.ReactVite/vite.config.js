@@ -1,22 +1,29 @@
-import {
-    defineConfig,
-    // loadEnv
-} from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// import process from 'process';
-
 // https://vitejs.dev/config/
-export default defineConfig(
-    // ({ mode }) => {
-    // const env = loadEnv(mode, process.cwd(), 'VITE_');
-    // console.log(env);
+export default defineConfig({
+    clearScreen: false,
+    envPrefix: 'VITE_',
+    // logLevel: 'silent',
+    logLevel: 'info',
+    // envDir: 'direnv',
+    envDir: '.',
 
-    // return
-    {
-        clearScreen: false,
-        envPrefix: 'TEST_',
-        plugins: [react()],
-    }
-    // }
-);
+    server: {
+        open: 'index.html',
+        port: 3000,
+        strictPort: true,
+    },
+
+    preview: {
+        port: 8080,
+        strictPort: true,
+    },
+
+    css: {
+        devSourcemap: true,
+    },
+
+    plugins: [react()],
+});
